@@ -1,0 +1,53 @@
+---
+// Añade aquí tus certificados. Las imágenes van en public/certificados/
+const certificados = [
+  { titulo: 'Nombre del certificado', entidad: 'Entidad que lo emite', anio: '2024', archivo: 'certificado-1.jpg' },
+  { titulo: 'Otro certificado', entidad: 'Otra entidad', anio: '2023', archivo: 'certificado-2.jpg' },
+];
+---
+
+<section id="certificados" class="section">
+  <h2>Certificados</h2>
+  <p class="intro">Formación y cursos que he completado. Pulsa en uno para verlo en grande.</p>
+  <ul class="grid">
+    {
+      certificados.map((c) => (
+        <li>
+          <a href={`/certificados/${c.archivo}`} target="_blank" rel="noopener">
+            <img
+              src={`/certificados/${c.archivo}`}
+              alt={`Certificado: ${c.titulo}`}
+              loading="lazy"
+            />
+            <div class="info">
+              <h3>{c.titulo}</h3>
+              <p>{c.entidad} · {c.anio}</p>
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .section { max-width: 62rem; margin: 0 auto; padding: 4.5rem clamp(1rem, 5vw, 3rem); }
+  .section h2 { font-size: 1.8rem; color: var(--accent); }
+  .intro { color: var(--muted); }
+  .grid {
+    list-style: none; padding: 0; margin: 1.5rem 0 0;
+    display: grid; gap: 1.25rem;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  }
+  .grid a {
+    display: block; height: 100%;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+    overflow: hidden; text-decoration: none; color: var(--text);
+    transition: border-color 0.2s;
+  }
+  .grid a:hover { border-color: var(--accent); }
+  img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--bg); }
+  .info { padding: 0.9rem 1rem; }
+  h3 { font-size: 1rem; margin: 0 0 0.25rem; }
+  .info p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+</style>

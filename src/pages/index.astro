@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Certificados from '../components/Certificados.astro';
+import ProyectoPersonal from '../components/ProyectoPersonal.astro';
 
 // Fondo de "código": se genera al compilar y se repite para llenar la pantalla.
 const snippet = `import { useState, useEffect } from 'react';
@@ -79,6 +81,26 @@ const codeBackground = Array(6).fill(snippet).join('\n');
           <p>Cómo trabajas con otras personas o cómo afrontas los errores.</p>
         </li>
       </ul>
+    </section>
+
+    <section id="proyectos" class="section">
+      <h2>Proyectos</h2>
+      <p>
+        Aquí puedes mostrar tus proyectos personales, de estudio o de trabajo. Añade una
+        breve descripción y un enlace a cada uno.
+      </p>
+      <ProyectoPersonal
+        title="Nombre del proyecto"
+        description="Breve descripción del proyecto, qué hace y qué tecnologías usa."
+        link="https://example.com/proyecto" />
+    </section>
+
+    <section id="certificados" class="section">
+      <h2>Certificados</h2>
+      <p>
+        Si has hecho cursos o bootcamps, puedes mostrar tus certificados aquí.
+      </p>
+      <Certificados />
     </section>
 
     <section id="cv" class="section">

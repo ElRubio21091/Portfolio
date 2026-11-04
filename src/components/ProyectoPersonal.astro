@@ -1,0 +1,52 @@
+---
+// Cambia estos datos por los de tu proyecto.
+const proyecto = {
+  titulo: 'Título de mi proyecto',
+  descripcion:
+    'Explica en 2 o 3 frases de qué trata tu proyecto, qué problema resuelve o qué querías investigar, y qué hiciste tú.',
+  tecnologias: ['Unity', 'C#'],
+  imagen: '/proyecto.jpg', // opcional: pon la imagen en public/proyecto.jpg
+  enlace: 'https://TU-USUARIO.itch.io/TU-JUEGO', // pega aquí el enlace de tu página de itch.io
+};
+---
+
+<section id="proyecto" class="section">
+  <h2>Proyecto personal</h2>
+  <article class="card">
+    <img src={proyecto.imagen} alt={`Imagen de ${proyecto.titulo}`} loading="lazy" />
+    <div class="body">
+      <h3>{proyecto.titulo}</h3>
+      <p>{proyecto.descripcion}</p>
+      <ul class="tags">
+        {proyecto.tecnologias.map((t) => <li>{t}</li>)}
+      </ul>
+      <a class="btn" href={proyecto.enlace} target="_blank" rel="noopener">Ver en itch.io</a>
+    </div>
+  </article>
+</section>
+
+<style>
+  .section { max-width: 62rem; margin: 0 auto; padding: 4.5rem clamp(1rem, 5vw, 3rem); }
+  .section h2 { font-size: 1.8rem; color: var(--accent); }
+  .card {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+    overflow: hidden;
+  }
+  img { width: 100%; height: 100%; min-height: 14rem; object-fit: cover; background: var(--bg); }
+  .body { padding: 1.5rem; }
+  h3 { font-size: 1.3rem; }
+  .body p { color: var(--muted); margin: 0 0 1rem; }
+  .tags { list-style: none; padding: 0; margin: 0 0 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tags li {
+    font-family: var(--mono); font-size: 0.8rem; color: var(--warm);
+    border: 1px solid var(--line); border-radius: 4px; padding: 0.15rem 0.5rem;
+  }
+  .btn {
+    display: inline-block; padding: 0.7rem 1.2rem; border-radius: 6px;
+    background: var(--accent); color: #0d1117; border: 1px solid var(--accent);
+    font-family: var(--mono); font-weight: 700; font-size: 0.9rem; text-decoration: none;
+  }
+  .btn:hover { filter: brightness(1.1); }
+  @media (max-width: 640px) { .card { grid-template-columns: 1fr; } }
+</style>
