@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Certificados from '../components/Certificados.astro';
 import ProyectoPersonal from '../components/ProyectoPersonal.astro';
+import Habilidades from '../components/Habilidades.astro';
+import Paradigma from '../components/Paradigma.astro';
 
 // Fondo de "código": se genera al compilar y se repite para llenar la pantalla.
 const snippet = `import { useState, useEffect } from 'react';
@@ -56,51 +58,30 @@ const codeBackground = Array(6).fill(snippet).join('\n');
     <section id="sobre-mi" class="section">
       <h2>Sobre mí</h2>
       <p>
-        Escribe aquí quién eres: dónde vives, qué estudias o a qué te dedicas y qué te
-        llevó a la programación. Dos o tres frases claras funcionan mejor que un párrafo largo.
+        Soy una persona <strong>motivada y trabajadora</strong>: me gusta dar lo mejor de mí,
+        ya sea completando una tarea o resolviendo un problema. Disfruto <strong>ayudando a los demás</strong>,
+        aprendiendo cosas nuevas y afrontando retos para mejorar un poco cada día.
       </p>
       <p>
-        Añade también qué tecnologías usas ahora y qué te gustaría hacer profesionalmente.
+        Estudié <strong>Diseño de Aplicaciones Web</strong> en <strong>SA Palomera</strong>, donde construí una base sólida en
+        <strong>desarrollo web, programación y resolución de problemas</strong>. También cursé
+        <strong>Desarrollo de Videojuegos</strong> en una academia de programación, lo que me permitió explorar
+        mi interés por la programación, la creatividad y las tecnologías interactivas.
       </p>
-    </section>
-
-    <section id="paradigma" class="section">
-      <h2>Paradigma personal</h2>
-      <p class="intro">Los principios con los que trabajo y aprendo.</p>
-      <ul class="principles">
-        <li>
-          <h3>Principio 1</h3>
-          <p>Describe una idea que guíe tu forma de programar, por ejemplo: código simple antes que código listo.</p>
-        </li>
-        <li>
-          <h3>Principio 2</h3>
-          <p>Otro valor tuyo: aprender en público, probar rápido, documentar lo que haces...</p>
-        </li>
-        <li>
-          <h3>Principio 3</h3>
-          <p>Cómo trabajas con otras personas o cómo afrontas los errores.</p>
-        </li>
-      </ul>
-    </section>
-
-    <section id="proyectos" class="section">
-      <h2>Proyectos</h2>
       <p>
-        Aquí puedes mostrar tus proyectos personales, de estudio o de trabajo. Añade una
-        breve descripción y un enlace a cada uno.
+        Todo empezó de pequeño con <strong>Scratch</strong>: descubrí lo divertido que es crear cosas con código
+        y entender cómo encajan las piezas de un programa. Desde entonces, programar se ha convertido en una parte
+        importante de mis intereses y de mis objetivos profesionales.
       </p>
-      <ProyectoPersonal
-        title="Nombre del proyecto"
-        description="Breve descripción del proyecto, qué hace y qué tecnologías usa."
-        link="https://example.com/proyecto" />
-    </section>
-
-    <section id="certificados" class="section">
-      <h2>Certificados</h2>
       <p>
-        Si has hecho cursos o bootcamps, puedes mostrar tus certificados aquí.
+        Vengo de una <strong>familia de programadores y diseñadores web</strong>: mi hermano, mi primo y mi tío
+        trabajan en el sector. Su ejemplo me ha inspirado a seguir desarrollando mis habilidades y a construir
+        una carrera en tecnología y desarrollo de software.
       </p>
-      <Certificados />
+      <blockquote class="closing">
+        Me considero una persona <strong>curiosa, adaptable y comprometida</strong>, siempre dispuesta a aprender,
+        asumir nuevos retos y aportar al equipo.
+      </blockquote>
     </section>
 
     <section id="cv" class="section">
@@ -111,6 +92,11 @@ const codeBackground = Array(6).fill(snippet).join('\n');
       <a class="btn" href="/cv-europass.pdf" target="_blank" rel="noopener">Abrir CV Europass</a>
       <a class="btn ghost" href="/cv-europass.pdf" download>Descargar PDF</a>
     </section>
+
+    <Habilidades />
+    <Paradigma />
+    <ProyectoPersonal />
+    <Certificados />
   </main>
 </Layout>
 
@@ -170,15 +156,16 @@ const codeBackground = Array(6).fill(snippet).join('\n');
   }
   .section h2 { font-size: 1.8rem; color: var(--accent); }
   .intro { color: var(--muted); }
-  .principles {
-    list-style: none; padding: 0; margin: 1.5rem 0 0;
-    display: grid; gap: 1.25rem;
+  .section p { margin: 0 0 1.1rem; }
+  strong {
+    color: var(--text); font-weight: 600;
+    background: linear-gradient(transparent 60%, rgba(121, 192, 255, 0.25) 60%);
   }
-  .principles li {
-    padding-left: 1.25rem; border-left: 3px solid var(--warm);
+  .closing {
+    margin: 2rem 0 0; padding: 0.25rem 0 0.25rem 1.25rem;
+    border-left: 3px solid var(--warm);
+    font-size: 1.1rem; color: var(--muted);
   }
-  .principles h3 { font-size: 1.05rem; margin-bottom: 0.25rem; }
-  .principles p { margin: 0; color: var(--muted); }
 
   @media (max-width: 640px) {
     .code-bg { padding-left: 0; opacity: 0.25; }

@@ -53,7 +53,7 @@ const { title = 'Raúl | Portfolio' } = Astro.props;
         border-bottom: 1px solid var(--line);
         font-family: var(--mono); font-size: 0.9rem;
       }
-      .nav nav { display: flex; gap: 1.25rem; }
+      .nav nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.25rem 1.25rem; }
       .nav a { text-decoration: none; color: var(--muted); }
       .nav a:hover, .nav .logo { color: var(--accent); }
       footer {
@@ -68,9 +68,10 @@ const { title = 'Raúl | Portfolio' } = Astro.props;
       <a class="logo" href="#inicio">~/raul</a>
       <nav>
         <a href="#sobre-mi">sobre mí</a>
-        <a href="#paradigma">paradigma</a>
         <a href="#cv">currículum</a>
-        <a href="#proyectos">proyectos</a>
+        <a href="#habilidades">habilidades</a>
+        <a href="#paradigma">paradigma</a>
+        <a href="#proyecto">proyecto</a>
         <a href="#certificados">certificados</a>
       </nav>
     </header>
