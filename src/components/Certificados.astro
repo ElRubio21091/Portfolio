@@ -1,8 +1,13 @@
 ---
-// Añade aquí tus certificados. Las imágenes van en public/certificados/
+// Añade aquí tus certificados. Imágenes en public/certificados/
 const certificados = [
-  { titulo: 'Nombre del certificado', entidad: 'Entidad que lo emite', anio: '2024', archivo: 'certificado-1.jpg' },
-  { titulo: 'Otro certificado', entidad: 'Otra entidad', anio: '2023', archivo: 'certificado-2.jpg' },
+  { titulo: 'V7 · Creación de videojuegos con Unity (avanzado, proyectos)', entidad: 'ClauTIC', anio: '2025', archivo: 'v7-unity-avanzado.jpg' },
+  { titulo: 'V6 · Creación de videojuegos con Unity (intermedio)', entidad: 'ClauTIC', anio: '2024', archivo: 'v6-unity-intermedio.jpg' },
+  { titulo: 'V5 · Creación de videojuegos con Unity (inicial)', entidad: 'ClauTIC', anio: '2023', archivo: 'v5-unity-inicial.jpg' },
+  { titulo: 'V4 · Creación de videojuegos con Unreal, Stencyl y Roblox', entidad: 'ClauTIC', anio: '2022', archivo: 'v4-unreal-roblox.jpg' },
+  { titulo: 'V3 · Creación de videojuegos con Scratch (avanzado)', entidad: 'ClauTIC', anio: '2021', archivo: 'v3-scratch-avanzado.jpg' },
+  { titulo: 'GBL · Minecraft Exploration, Galaxy, arquitectura y Redstone Lab', entidad: 'ClauTIC', anio: '2019', archivo: 'gbl-minecraft.jpg' },
+  { titulo: 'XIII Certamen Nacional de Lectura en Voz Alta', entidad: 'Fundació Enciclopèdia Catalana', anio: '2017', archivo: 'lectura-en-voz-alta.jpg' },
 ];
 ---
 
@@ -18,6 +23,7 @@ const certificados = [
               src={`/certificados/${c.archivo}`}
               alt={`Certificado: ${c.titulo}`}
               loading="lazy"
+              decoding="async"
             />
             <div class="info">
               <h3>{c.titulo}</h3>
@@ -46,7 +52,7 @@ const certificados = [
     transition: border-color 0.2s;
   }
   .grid a:hover { border-color: var(--accent); }
-  img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--bg); }
+  img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: var(--bg); }
   .info { padding: 0.9rem 1rem; }
   h3 { font-size: 1rem; margin: 0 0 0.25rem; }
   .info p { margin: 0; color: var(--muted); font-size: 0.9rem; }
